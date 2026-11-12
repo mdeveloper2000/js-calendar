@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="/bootstrapcss/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>JS Calendar - <%= anoAtual %></title>
+</head>
+
+<body>
+    <div class="container-fluid fs-5 d-flex bg-light">
+        <div class="row d-flex justify-content-center">
+            <% meses.forEach((mes, index) => { %>
+                <div class="cartao-mes col-3 m-1 shadow border">
+                    <div class="row bg-gradient <%= mes === mesAtual ? 'bg-success' : 'bg-primary' %>">
+                        <div class="col-12 fs-4"><%= mes %></div>                         
+                    </div>
+                    <div class="row fs-6 my-2">
+                        <% diasDaSemana.forEach(function(diaDaSemana) { %>                             
+                            <div class="celula-calendario rounded-pill py-1 bg-gradient d-flex justify-content-center
+                                text-light <%= (diaDaSemana === diaDaSemanaAtual && mes === mesAtual) ? 'bg-success' : 'bg-primary' %>">
+                                    <%= diaDaSemana %>
+                            </div>
+                        <% }) %>
+                    </div>
+                    <div class="row">
+                        <% for(let i = primeirosDiasPorMes[index]; i > 0; i--) { %>
+                            <div class="celula-calendario border py-1 bg-gradient d-flex justify-content-center"></div>
+                        <% } %>
+                        <% todosMeses[index].forEach(function(dia, index) { %>                            
+                            <div class="celula-calendario border py-1 bg-gradient d-flex justify-content-center 
+                                <%= dia === diaAtual && mes === mesAtual ? 'bg-warning' : '' %>"><%= dia %>
+                            </div>                            
+                        <% })%>
+                    </div>                                       
+                </div>
+            <% }) %>
+        </div>        
+    </div>    
+</body>
+
+</html>

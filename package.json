@@ -1,0 +1,19 @@
+{
+  "name": "js-calendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch --env-file=.env index.js",
+    "start": "node --env-file=.env index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bootstrap": "^5.3.9",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0"
+  }
+}

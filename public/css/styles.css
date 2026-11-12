@@ -1,0 +1,7 @@
+.cartao-mes {
+    height: 325px;
+}
+
+.celula-calendario {
+    width: calc(100% / 7);
+}
